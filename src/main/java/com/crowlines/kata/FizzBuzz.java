@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class FizzBuzz {
 
-	private static final int bit3     = 0b00000100;
-	private static final int bit7     = 0b01000000;
-	private static final int bit3and7 = bit3 | bit7;
+	private static final byte bit3     = 0b00000100;
+	private static final byte bit7     = 0b01000000;
+	private static final byte bit3and7 = bit3 | bit7;
 	
 	public String echo(int number) {
 		int mod3 = (number % 3 == 0) ? bit3 : 0;
