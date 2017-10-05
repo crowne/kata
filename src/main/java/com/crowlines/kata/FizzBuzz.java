@@ -1,9 +1,11 @@
 package com.crowlines.kata;
 
 import java.util.InputMismatchException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Scanner;
 
-public class FizzBuzz {
+public class FizzBuzz implements Observer {
 
 	private static final byte bit3     = 0b00000100;
 	private static final byte bit7     = 0b01000000;
@@ -36,7 +38,13 @@ public class FizzBuzz {
 		
 		return result;
 	}
-	
+
+	@Override
+	public void update(Observable o, Object arg) {
+		Counter cnt = (Counter) o;
+		System.out.println("Observed : " + this.echo(cnt.getCount()));
+	}
+
 	public static void main(String[] args) {
 
 		System.out.println("Please enter a number, or type done to quit:");
